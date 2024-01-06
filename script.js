@@ -1,6 +1,6 @@
 'use strict';
 
-const videoList = ["space", "life-beyond","interstellar","earth","earth's-sky"];
+const videoList = ["space","interstellar", "life-beyond","earth's-sky","earth"];
 
 const mainVideo = document.querySelector("video");
 const container = document.querySelector(".container")
@@ -200,7 +200,7 @@ volumeIcon.addEventListener('click', (e) => {
     mainVideo.volume = 0;
     volumeIcon.src = `./assets/icons/no_sound.svg`;
   } else {
-    mainVideo.volume = 0.5; // Or set your desired default volume
+    mainVideo.volume = 0.5;
     volumeIcon.src = `./assets/icons/volume_up (1).svg`;
   }
 });
@@ -244,23 +244,19 @@ playbackSpeedBtn.addEventListener("click", () => {
 
 speedList.forEach(option => {
   option.addEventListener("click", () => {
-    const playbackRate = parseFloat(option.dataset.speed); // Parse the speed value to float
+    const playbackRate = parseFloat(option.dataset.speed); 
     mainVideo.playbackRate = playbackRate;
 
-    // Remove 'active' class from all options
     speedList.forEach(item => {
       item.classList.remove("active");
     });
 
-    // Add 'active' class to the clicked option
     option.classList.add("active");
 
-    // Hide speed options
     speedOptions.classList.remove("show");
   });
 });
 
-// Close speed options when clicking outside the playback-speed button or its child elements
 document.addEventListener("click", e => {
   const isPlaybackSpeedBtn = e.target.closest(".playback-speed");
   if (!isPlaybackSpeedBtn) {
@@ -284,7 +280,6 @@ fullscreenBtn.addEventListener('click', () => {
   }
 });
 
-// Picture-in-Picture butonuna basıldığında
 picInPicBtn.addEventListener('click', () => {
   if (document.pictureInPictureElement) {
     document.exitPictureInPicture();
