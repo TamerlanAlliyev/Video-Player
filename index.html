@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Video Player</title>
+</head>
+
+<body>
+
+  <div class="container show-controls">
+    <div class="wrapper">
+      <!-- Time line -->
+      <div class="video-timeline">
+        <div class="progress-area">
+          <span>00:00</span>
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+      <ul class="video-controls">
+        <li class="options left">
+          <button class="volume"><img src="./assets/icons/volume_up (1).svg" alt=""></i></button>
+         <!-- Volume -->
+         
+         <div class="volume-line hidden">
+          <div class="volume-area">
+            <div class="volume-bar"></div>
+          </div>
+        </div>
+
+          <div class="video-timer">
+            <p class="current-time">00:00</p>
+            <p class="separator"> / </p>
+            <p class="video-duration">00:00</p>
+          </div>
+        </li>
+        <li class="options center">
+          <button class="skip-backward"><img src="./assets/icons/media-skip-backward-svgrepo-com.svg" alt=""></button>
+          <button class="play-pause"><img src="./assets/icons/play.svg" alt=""></button>
+          <button class="skip-forward"><img src="./assets/icons/media-forward.svg " alt=""></button>
+        </li>
+        <li class="options right">
+          <button class="secound-back"><img src="./assets/icons//Group 5.svg" alt=""></button>
+          <button class="secound-forward"><img src="./assets/icons//Group 4.svg" alt=""></button>
+          <div class="playback-content">
+            <button class="playback-speed"><span class="material-symbols-rounded"><img src="./assets/icons/playback-speed-svgrepo-com.svg" alt=""></span></button>
+            <ul class="speed-options">
+              <li data-speed="2">2x</li>
+              <li data-speed="1.5">1.5x</li>
+              <li data-speed="1" class="active">Normal</li>
+              <li data-speed="0.75">0.75x</li>
+              <li data-speed="0.5">0.5x</li>
+            </ul>
+          </div>
+          <button class="pic-in-pic"><span class="material-symbols-rounded"><img src="./assets/icons/picture-in-picture-bold-svgrepo-com.svg"
+            alt=""></span></button>
+          <button class="fullscreen"><img src="./assets/icons/fullscreen.svg" alt=""></button>
+        </li>
+      </ul>
+    </div>
+    <video src="./assets/video/space.mp4"></video>
+  </div>
+
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
