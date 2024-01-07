@@ -149,6 +149,32 @@ document.addEventListener("mouseup", () => {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  let lastClickTime = 0;
+
+  container.addEventListener("click", function (event) {
+    const currentTime = new Date().getTime();
+    const doubleClickThreshold = 300; 
+
+
+    if (currentTime - lastClickTime < doubleClickThreshold) {
+      const rect = container.getBoundingClientRect();
+      const yClickPosition = event.clientY - rect.top;
+      const halfHeight = container.clientHeight / 2;
+
+      if (yClickPosition < halfHeight) {
+        mainVideo.currentTime -= 10; 
+      } else {
+        mainVideo.currentTime += 10;
+      }
+    }
+
+    lastClickTime = currentTime;
+  });
+});
+
+
+
 
 
 // Video Volume
